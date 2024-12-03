@@ -9,12 +9,13 @@
         stroke-linecap="round"
         stroke-linejoin="round"
     >
-        <path d="m6 9 6 6 6-6" />
+        <circle cx="12" cy="12" r="10" />
+        <path d="m9 12 2 2 4-4" />
     </svg>
 </template>
 <script>
 export default {
-    name: "ChevronDownIcon",
+    name: "CheckIcon",
     props: {
         size: {
             type: [Number, String],

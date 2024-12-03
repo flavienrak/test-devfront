@@ -8,6 +8,8 @@ const customPalettes = {
     primary: generatePalette("#355689"),
     accent: generatePalette("#c02b6b"),
     dark: generatePalette("#1f2937"),
+    yellow: generatePalette("#ffbb02"),
+    green: generatePalette("#00b67a"),
 };
 
 module.exports = {
@@ -22,6 +24,8 @@ module.exports = {
                 primary: customPalettes.primary,
                 accent: customPalettes.accent,
                 dark: customPalettes.dark,
+                yellow: customPalettes.yellow,
+                green: customPalettes.green,
             },
 
             fontFamily: {
@@ -29,7 +33,7 @@ module.exports = {
                 display: ["Nunito"],
                 mono: ["Nunito"],
                 body: ["Nunito"],
-                title: ["Lato"],
+                title: ["Lato", "sans-serif"],
             },
             backgroundImage: {
                 "half-gradient":

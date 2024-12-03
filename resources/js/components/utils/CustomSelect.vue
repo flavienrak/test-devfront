@@ -47,7 +47,7 @@
 import ChevronDownIcon from "@/components/icons/ChevronDownIcon.vue";
 
 export default {
-    name: "CustomSelectComponent",
+    name: "CustomSelect",
     components: { ChevronDownIcon },
     props: {
         placeholder: {

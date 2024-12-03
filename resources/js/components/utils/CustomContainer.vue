@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div class="max-w-[1400px]">
         <slot></slot>
     </div>

@@ -9,13 +9,12 @@
         stroke-linecap="round"
         stroke-linejoin="round"
     >
-        <path d="m6 17 5-5-5-5" />
-        <path d="m13 17 5-5-5-5" />
+        <path d="m15 18-6-6 6-6" />
     </svg>
 </template>
 <script>
 export default {
-    name: "ArrowRightIcon",
+    name: "ChevronLeftIcon",
     props: {
         size: {
             type: [Number, String],

@@ -1,8 +1,8 @@
 <template>
     <footer class="bg-gray-200 text-dark-500 font-sans text-xs">
         <div class="flex flex-col gap-10">
-            <div class="px-10">
-                <p class="font-medium py-2 text-secondary">
+            <div>
+                <p class="font-medium py-2 px-10 text-secondary">
                     * Le prix barré affiché représente le tarif maximum auquel
                     le test psychotechnique a été vendu dans le département au
                     cours des 15 derniers jours, hors offre de remboursement de
@@ -17,13 +17,13 @@
                         </p>
                         <p class="inline-flex items-center gap-[2px]">
                             <i
-                                v-for="item in stars"
-                                :key="item.label"
+                                v-for="(_, index) in Array.from({ length: 5 })"
+                                :key="'footer-star-' + index"
                                 :class="[
                                     'inline-flex justify-center items-center p-1 text-white',
-                                    item.half
+                                    index === 4
                                         ? 'bg-half-gradient'
-                                        : 'bg-[#00B67A]',
+                                        : 'bg-green-500',
                                 ]"
                                 ><star-icon size="16"
                             /></i>
@@ -64,7 +64,7 @@
                                 target="_blank"
                                 class="inline-flex items-center gap-1 text-sm"
                             >
-                                <arrow-right-icon size="12" />{{
+                                <double-chevron-icon size="12" />{{
                                     item.label
                                 }}
                                 ({{ item.num }})
@@ -104,7 +104,7 @@
                                         target="_blank"
                                         class="inline-flex items-center gap-1 text-sm"
                                     >
-                                        <arrow-right-icon size="12" />{{
+                                        <double-chevron-icon size="12" />{{
                                             item.label
                                         }}
                                     </a>
@@ -132,7 +132,7 @@
                                         target="_blank"
                                         class="inline-flex items-center gap-1 text-sm"
                                     >
-                                        <arrow-right-icon size="12" />{{
+                                        <double-chevron-icon size="12" />{{
                                             item.label
                                         }}
                                     </a>
@@ -192,7 +192,7 @@
                                         target="_blank"
                                         class="inline-flex items-center gap-1 text-sm"
                                     >
-                                        <arrow-right-icon size="12" />{{
+                                        <double-chevron-icon size="12" />{{
                                             item.label
                                         }}
                                     </a>
@@ -220,7 +220,7 @@
                                         target="_blank"
                                         class="inline-flex items-center gap-1 text-sm"
                                     >
-                                        <arrow-right-icon size="12" />{{
+                                        <double-chevron-icon size="12" />{{
                                             item.label
                                         }}
                                     </a>
@@ -238,7 +238,7 @@
                                 <h1 class="font-semibold text-base">
                                     Les Tests par Départements
                                 </h1>
-                                <custom-select-component
+                                <custom-select
                                     :value="departmentField.value"
                                     :onclick="handleChangeDepartement"
                                     :placeholder="'Choisir un département'"
@@ -249,7 +249,7 @@
                                 <h1 class="font-semibold text-base">
                                     Les Préfectures de France
                                 </h1>
-                                <custom-select-component
+                                <custom-select
                                     :value="prefectureField.value"
                                     :onclick="handleChangePrefecture"
                                     :placeholder="'Choisir un département'"
@@ -372,8 +372,8 @@ import InstagramIcon from "@/components/icons/InstagramIcon.vue";
 import TwitterIcon from "@/components/icons/TwitterIcon.vue";
 import YoutubeIcon from "@/components/icons/YoutubeIcon.vue";
 import LinkedInIcon from "@/components/icons/LinkedInIcon.vue";
-import ArrowRightIcon from "@/components/icons/ArrowRightIcon.vue";
-import CustomSelectComponent from "@/components/landing/CustomSelectComponent.vue";
+import DoubleChevronIcon from "@/components/icons/DoubleChevronIcon.vue";
+import CustomSelect from "@/components/utils/CustomSelect.vue";
 
 export default {
     name: "FooterComponent",
@@ -384,57 +384,35 @@ export default {
         TwitterIcon,
         YoutubeIcon,
         LinkedInIcon,
-        ArrowRightIcon,
-        CustomSelectComponent,
+        DoubleChevronIcon,
+        CustomSelect,
     },
     data() {
         return {
-            stars: [
-                {
-                    label: "star-1",
-                    half: false,
-                },
-                {
-                    label: "star-2",
-                    half: false,
-                },
-                {
-                    label: "star-3",
-                    half: false,
-                },
-                {
-                    label: "star-4",
-                    half: false,
-                },
-                {
-                    label: "star-5",
-                    half: true,
-                },
-            ],
             ext: [
                 {
                     label: "Legifrance",
-                    href: "#",
+                    href: "https://www.legifrance.gouv.fr/",
                     src: "/images/legifrance.jpg",
                 },
                 {
                     label: "Gouvernement",
-                    href: "#",
+                    href: "https://www.gouvernement.fr/",
                     src: "/images/gouvernement-fr.jpg",
                 },
                 {
                     label: "Service Publique",
-                    href: "#",
+                    href: "https://connexion.mon.service-public.fr/auth/0?spid=https://portail.msp.gouv.fr&minlvl=1&mode=0&failure_id=0",
                     src: "/images/mon-service-public-fr.jpg",
                 },
                 {
                     label: "France FR",
-                    href: "#",
+                    href: "https://www.france.fr/",
                     src: "/images/france-fr.jpg",
                 },
                 {
                     label: "Bloctel",
-                    href: "#",
+                    href: "http://www.bloctel.gouv.fr/",
                     src: "/images/bloctel.png",
                 },
             ],
