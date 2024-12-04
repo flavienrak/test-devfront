@@ -12,6 +12,8 @@
         <!-- Composant Preparation -->
         <preparation-component />
         <!-- Composant Footer -->
+        <reservation-component />
+        <!-- Composant Footer -->
         <footer-component />
     </div>
 </template>
@@ -23,6 +25,7 @@ import StepsComponent from "@/components/landing/StepsComponent.vue";
 import NoticeComponent from "@/components/landing/NoticeComponent.vue";
 import StatsComponent from "@/components/landing/StatsComponent.vue";
 import PreparationComponent from "@/components/landing/PreparationComponent.vue";
+import ReservationComponent from "@/components/landing/ReservationComponent.vue";
 
 export default {
     name: "LandingPage",
@@ -33,6 +36,7 @@ export default {
         NoticeComponent,
         StatsComponent,
         PreparationComponent,
+        ReservationComponent,
     },
 };
 </script>
