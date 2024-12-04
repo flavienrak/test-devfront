@@ -1,17 +1,23 @@
 <template>
-    <div
-        class="bg-accent-500 flex justify-center items-center gap-20 text-white p-20"
-    >
-        <section v-for="item in stats" :key="item.id" class="max-w-[14rem]">
-            <label
-                class="flex flex-col justify-center text-center items-center gap-4"
-            >
-                <component :is="item.icon" size="80" />
-                <p class="text-sm">
-                    {{ item.label }}
-                </p>
-            </label>
-        </section>
+    <div class="bg-accent-500 text-white py-20">
+        <custom-container>
+            <div class="flex justify-evenly">
+                <section
+                    v-for="item in stats"
+                    :key="item.id"
+                    class="max-w-[14rem]"
+                >
+                    <label
+                        class="flex flex-col justify-center text-center items-center gap-4"
+                    >
+                        <component :is="item.icon" size="80" />
+                        <p class="text-sm">
+                            {{ item.label }}
+                        </p>
+                    </label>
+                </section>
+            </div>
+        </custom-container>
     </div>
 </template>
 <script>
@@ -20,13 +26,15 @@ import { v4 as uuidv4 } from "uuid";
 import ListIcon from "@/components/icons/ListIcon.vue";
 import PointerIcon from "@/components/icons/PointerIcon.vue";
 import AccreditationIcon from "@/components/icons/AccreditationIcon.vue";
-import CheckIcon from "../icons/CheckIcon.vue";
+import CheckIcon from "@/components/icons/CheckIcon.vue";
+import CustomContainer from "@/components/utils/CustomContainer.vue";
 
 export default {
     name: "StatsComponent",
     components: {
         ListIcon,
         PointerIcon,
+        CustomContainer,
     },
     data() {
         return {

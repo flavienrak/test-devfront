@@ -1,6 +1,8 @@
 <template>
-    <div class="max-w-[1400px]">
-        <slot></slot>
+    <div class="w-full flex justify-center">
+        <div class="w-full max-w-[88rem]">
+            <slot></slot>
+        </div>
     </div>
 </template>
 <script>
