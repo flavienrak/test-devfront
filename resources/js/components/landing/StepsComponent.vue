@@ -1,30 +1,34 @@
 <template>
-    <div class="bg-white p-32 text-dark-500">
+    <div class="bg-white py-32 text-dark-500">
         <custom-container>
             <div class="flex flex-col gap-32">
                 <!-- Etapes -->
                 <section>
-                    <div class="grid grid-cols-5 gap-80">
-                        <div
-                            class="col-span-2 relative h-[32rem] w-[32rem] rounded-sm shadow-md"
-                        >
-                            <img
-                                :src="'/images/email.png'"
-                                alt="Email"
-                                class="absolute w-full h-full object-cover"
-                            />
+                    <div
+                        class="flex flex-col-reverse lg:flex-row items-center gap-20"
+                    >
+                        <div class="w-2/5 flex justify-center">
                             <div
-                                class="absolute w-40 h-40 top-5 -right-20 z-10 rounded-full shadow-md"
+                                class="relative h-[32rem] w-[32rem] rounded-sm shadow-md"
                             >
                                 <img
-                                    :src="'/images/person.jpg'"
+                                    :src="'/images/email.png'"
                                     alt="Email"
-                                    class="absolute w-full h-full object-cover rounded-full"
+                                    class="absolute w-full h-full object-cover"
                                 />
+                                <div
+                                    class="absolute w-40 h-40 top-5 -left-20 lg:left-auto lg:-right-20 z-10 rounded-full shadow-md"
+                                >
+                                    <img
+                                        :src="'/images/person.jpg'"
+                                        alt="Email"
+                                        class="absolute w-full h-full object-cover rounded-full"
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div
-                            class="col-span-3 py-5 flex flex-col gap-14 items-center"
+                            class="flex-1 py-5 flex flex-col gap-14 items-center"
                         >
                             <h1
                                 class="font-title text-accent-500 font-semibold text-3xl"
@@ -67,10 +71,10 @@
 
                 <!-- Entrainnement -->
                 <section>
-                    <div class="grid grid-cols-5 gap-20">
-                        <div class="col-span-3 py-5 flex flex-col gap-14">
+                    <div class="flex flex-col lg:flex-row items-center gap-20">
+                        <div class="flex-1 py-5 flex flex-col gap-14">
                             <h1
-                                class="font-title text-accent-500 font-semibold text-3xl"
+                                class="font-title text-accent-500 font-semibold text-3xl text-center lg:text-start"
                             >
                                 Votre entraînement Gratuit inclus
                             </h1>
@@ -120,15 +124,17 @@
                                     </label>
                                 </li>
                             </ul>
-                            <custom-button
-                                label="Je réserve mon test psychotechnique"
-                                class="w-max bg-accent-500 text-white"
-                            >
-                                <i class="inline-flex px-2">
-                                    <chevron-right-icon size="24" /> </i
-                            ></custom-button>
+                            <div class="flex justify-center lg:justify-start">
+                                <custom-button
+                                    label="Je réserve mon test psychotechnique"
+                                    class="w-max bg-accent-500 text-white"
+                                >
+                                    <i class="inline-flex px-2">
+                                        <chevron-right-icon size="24" /> </i
+                                ></custom-button>
+                            </div>
                         </div>
-                        <div class="col-span-2">
+                        <div class="w-2/5 flex justify-center">
                             <div
                                 class="relative h-[32rem] w-[32rem] rounded-sm shadow-md"
                             >

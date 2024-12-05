@@ -1,5 +1,5 @@
 <template>
-    <div class="relative px-10 flex gap-5 items-center">
+    <div class="relative flex gap-5 items-center justify-center">
         <i
             @click="prevSlide"
             :class="[
@@ -12,7 +12,7 @@
         /></i>
         <div
             ref="container"
-            class="overflow-hidden mask"
+            class="overflow-hidden mask w-[calc(100%-6rem)]"
             @mousedown="startDrag"
             @mouseup="stopDrag"
             @mouseleave="stopDrag"
@@ -22,10 +22,7 @@
                 class="grid gap-5 transition-transform duration-500"
                 :style="{
                     transform: `translateX(${currentTranslate}px)`,
-                    gridTemplateColumns: `repeat(${items}, ${Math.floor(
-                        100 / slidesPreview
-                    )}%)`,
-                    padding: `0 ${gap}px`,
+                    gridTemplateColumns: gridTemplateColumns,
                 }"
             >
                 <slot></slot>
@@ -77,31 +74,31 @@ export default {
             currentTranslate: 0,
             prevTranslate: 0,
             containerWidth: 0,
+            preview: 3,
+            breakpoints: {
+                1024: 3,
+                768: 2,
+                480: 1,
+            },
         };
     },
     computed: {
         adjustedSlideWidth() {
             // Ajuste la largeur pour inclure le gap
-            const totalGapWidth = (this.slidesPreview - 1) * this.gap; // Gaps totaux visibles
+            const totalGapWidth = (this.preview - 1) * this.gap; // Gaps totaux visibles
             const containerWidth = this.containerWidth - totalGapWidth; // Largeur restante après gaps
-            return containerWidth / this.slidesPreview; // Largeur ajustée des slides
+            return containerWidth / this.preview; // Largeur ajustée des slides
         },
-        slideWidth() {
-            return this.containerWidth / this.slidesPreview;
+        gridTemplateColumns() {
+            // Génère des colonnes dynamiques en fonction des ajustements
+            return `repeat(${this.items}, ${this.adjustedSlideWidth}px)`;
         },
         maxIndex() {
-            return this.slides.length - this.slidesPreview;
+            return this.slides.length - this.preview;
         },
         bounce() {
-            return Math.floor(this.slideWidth / this.slidesPreview);
+            return Math.floor(this.adjustedSlideWidth / this.preview);
         },
-    },
-    mounted() {
-        this.calculateContainerWidth();
-        window.addEventListener("resize", this.calculateContainerWidth);
-    },
-    beforeDestroy() {
-        window.removeEventListener("resize", this.calculateContainerWidth);
     },
     methods: {
         calculateContainerWidth() {
@@ -110,6 +107,21 @@ export default {
                 const gap = parseInt(style.getPropertyValue("gap"), 10) || 0; // Récupère la valeur du gap
                 this.containerWidth = this.$refs.container.offsetWidth - gap;
             }
+        },
+        // Ajuste le nombre de slides visibles selon la largeur de l'écran
+        adjustSlidesPreview() {
+            const width = window.innerWidth;
+
+            for (const [breakpoint, preview] of Object.entries(
+                this.breakpoints
+            ).sort((a, b) => b[0] - a[0])) {
+                if (width >= breakpoint) {
+                    this.preview = preview;
+                    break;
+                }
+            }
+
+            this.calculateContainerWidth();
         },
         prevSlide() {
             if (this.currentIndex > 0) {
@@ -126,7 +138,7 @@ export default {
         startDrag(event) {
             this.isDragging = true;
             this.startX = event.clientX;
-            this.prevTranslate = -this.currentIndex * this.slideWidth;
+            this.prevTranslate = -this.currentIndex * this.adjustedSlideWidth;
         },
         stopDrag() {
             if (this.isDragging) {
@@ -158,7 +170,7 @@ export default {
                     (this.currentIndex === 0 && deltaX > 0) || // Limite gauche
                     (this.currentIndex === this.maxIndex && deltaX < 0) // Limite droite
                 ) {
-                    const bounce = deltaX / this.slidesPreview; // Réduire l'effet de mouvement
+                    const bounce = deltaX / this.preview; // Réduire l'effet de mouvement
                     this.currentTranslate =
                         this.prevTranslate +
                         Math.min(Math.abs(bounce), this.bounce) *
@@ -169,15 +181,29 @@ export default {
             }
         },
         resetPosition() {
+            // Calculer la position en incluant les gaps
+            const totalGapOffset = this.currentIndex * this.gap;
+
             // Revenir à la position du slide actuel
-            this.currentTranslate = -this.currentIndex * this.slideWidth;
+            this.currentTranslate = -(
+                this.currentIndex * this.adjustedSlideWidth +
+                totalGapOffset
+            );
         },
+    },
+    mounted() {
+        this.preview = this.slidesPreview;
+        this.adjustSlidesPreview();
+        window.addEventListener("resize", this.adjustSlidesPreview);
+    },
+    beforeDestroy() {
+        window.removeEventListener("resize", this.adjustSlidesPreview);
     },
 };
 </script>
 
 <style>
-.mask {
+/* .mask {
     -webkit-mask: linear-gradient(90deg, #0000, #000 10% 90%, #0000);
-}
+} */
 </style>

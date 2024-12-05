@@ -1,15 +1,17 @@
 <template>
-    <div ref="container" class="px-32 pb-32 pt-16 bg-[#F8F9FB]">
+    <div ref="container" class="pb-32 pt-16 bg-[#F8F9FB]">
         <custom-container>
-            <div class="flex flex-col gap-16 text-dark-500">
-                <h1 class="font-title text-accent-500 font-semibold text-3xl">
+            <div class="flex flex-col gap-16 text-dark-500 px-16">
+                <h1
+                    class="font-title text-accent-500 font-semibold text-3xl text-center lg:text-start"
+                >
                     Ce qu'en pensent nos candidats
                 </h1>
                 <div
                     class="grid grid-cols-6 gap-10 items-center bg-white rounded-xl shadow-md py-10 px-20"
                 >
                     <div
-                        class="flex flex-col items-center justify-center gap-2"
+                        class="hidden lg:flex flex-col items-center justify-center gap-2"
                     >
                         <p class="font-bold text-xl">Excellent</p>
                         <div class="flex items-center gap-[2px]">
@@ -43,7 +45,7 @@
                             />
                         </div>
                     </div>
-                    <div class="col-span-5">
+                    <div class="col-span-6 lg:col-span-5">
                         <slider-component
                             slidesPreview="3"
                             gap="20"

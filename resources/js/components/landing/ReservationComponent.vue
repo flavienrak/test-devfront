@@ -1,5 +1,5 @@
 <template>
-    <div class="p-32 bg-[#F8F9FB]">
+    <div class="py-32 bg-[#F8F9FB]">
         <custom-container>
             <div class="flex flex-col gap-14">
                 <div>
