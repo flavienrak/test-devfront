@@ -13,7 +13,7 @@
                         <location-icon
                             :fill="'currentColor'"
                             :stroke="'white'"
-                            size="28"
+                            size="1.75rem"
                         />
                     </i>
                     {{ location }}
@@ -31,7 +31,7 @@
                 >
                     <i>
                         <alert-icon
-                            size="20"
+                            size="1.25rem"
                             :fill="'currentColor'"
                             :stroke="'white'"
                         />
@@ -54,7 +54,7 @@
             >
                 <p>RESERVER</p>
                 <i class="inline-flex px-2">
-                    <chevron-right-icon size="24" />
+                    <chevron-right-icon size="1.5rem" />
                 </i>
             </button>
             <p class="text-xs">3 places disponibles à cette date</p>

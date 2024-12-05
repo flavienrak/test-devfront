@@ -8,7 +8,7 @@
                     Ce qu'en pensent nos candidats
                 </h1>
                 <div
-                    class="grid grid-cols-6 gap-10 items-center bg-white rounded-xl shadow-md py-10 px-20"
+                    class="grid grid-cols-6 gap-10 items-center bg-white rounded-xl shadow-md py-10 px-10 lg:px-20"
                 >
                     <div
                         class="hidden lg:flex flex-col items-center justify-center gap-2"
@@ -22,7 +22,7 @@
                                 :key="'pr-' + index"
                                 class="text-yellow-500"
                             >
-                                <star-icon size="24" />
+                                <star-icon size="1.25rem" />
                             </i>
                         </div>
                         <p class="text-xs">
@@ -89,7 +89,7 @@
                                                 :key="'pr-' + index"
                                                 class="text-yellow-500"
                                             >
-                                                <star-icon size="14" />
+                                                <star-icon size="1rem" />
                                             </i>
                                         </div>
                                         <label

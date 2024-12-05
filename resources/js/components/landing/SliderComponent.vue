@@ -8,7 +8,7 @@
                     ? 'cursor-default opacity-50'
                     : 'cursor-pointer',
             ]"
-            ><chevron-left-icon size="32"
+            ><chevron-left-icon size="2rem"
         /></i>
         <div
             ref="container"
@@ -19,10 +19,11 @@
             @mousemove="onDrag"
         >
             <div
-                class="grid gap-5 transition-transform duration-500"
+                class="grid transition-transform duration-500"
                 :style="{
                     transform: `translateX(${currentTranslate}px)`,
                     gridTemplateColumns: gridTemplateColumns,
+                    gap: `${gap}px`,
                 }"
             >
                 <slot></slot>
@@ -36,7 +37,7 @@
                     ? 'cursor-default opacity-50'
                     : 'cursor-pointer',
             ]"
-            ><chevron-right-icon size="32"
+            ><chevron-right-icon size="2rem"
         /></i>
     </div>
 </template>

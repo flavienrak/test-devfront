@@ -15,7 +15,7 @@
                 <div class="flex flex-col gap-4">
                     <div class="relative flex items-center">
                         <i class="absolute text-dark-300 left-7">
-                            <location-icon size="32" />
+                            <location-icon size="2rem" />
                         </i>
                         <input
                             type="text"
@@ -24,7 +24,7 @@
                         />
                         <div class="flex absolute right-3 items-center gap-5">
                             <i class="text-dark-300 cursor-pointer">
-                                <send-icon size="28" />
+                                <send-icon size="1.75rem" />
                             </i>
                             <button
                                 class="bg-primary-500 flex justify-center items-center px-8 py-5 rounded-3xl"
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div
-                        class="bg-[#E9E9E9] rounded-md shadow p-6 grid grid-cols-4 gap-20"
+                        class="bg-[#E9E9E9] rounded-md shadow p-6 hidden lg:grid grid-cols-4 lg:gap-20"
                     >
                         <div class="flex justify-center items-center">
                             <reservation-select
@@ -71,7 +71,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="py-10 flex flex-col gap-5">
+                    <div class="py-10 hidden lg:flex flex-col gap-5">
                         <label class="inline-flex items-center gap-1">
                             <i class="text-primary-500">
                                 <spinner-icon size="32" />
@@ -82,8 +82,41 @@
                             <progress-bar progress="50" />
                         </div>
                     </div>
-                    <div class="grid grid-cols-4 gap-14">
-                        <div class="col-span-3 flex flex-col gap-5">
+
+                    <button
+                        class="bg-[#E9E9E9] flex lg:hidden justify-center items-center px-16 py-4 rounded-md font-semibold text-lg shadow-md"
+                    >
+                        Filtrer
+                    </button>
+                    <div
+                        class="grid lg:hidden grid-cols-3 shadow-md bg-white rounded-lg overflow-hidden"
+                    >
+                        <div
+                            v-for="(item, index) in filters"
+                            @click="actualFilter = item.label"
+                            :key="'filter-' + item.label"
+                            :class="[
+                                'flex flex-col gap-2 justify-center ps-20 p-5',
+                                index !== 0 ? 'border-l border-dark-100' : '',
+                                item.label === actualFilter
+                                    ? 'bg-primary-500 text-white'
+                                    : '',
+                            ]"
+                        >
+                            <p>{{ item.label }}</p>
+                            <h1 class="text-3xl">{{ item.tarif }}€</h1>
+                        </div>
+                    </div>
+
+                    <h1
+                        class="block lg:hidden text-3xl font-semibold text-dark-500 py-5"
+                    >
+                        12 Résultats
+                    </h1>
+
+                    <div class="flex gap-14 flex-col lg:flex-row items-center">
+                        <!-- Cards -->
+                        <div class="flex-1 w-full flex flex-col gap-5">
                             <reservation-card
                                 day="Lundi"
                                 date="04 Novembre 2024"
@@ -113,7 +146,19 @@
                                 assignation="Château-Thierry"
                             />
                         </div>
-                        <div class="flex flex-col gap-5">
+
+                        <div
+                            class="w-full flex lg:hidden justify-center items-center"
+                        >
+                            <button
+                                class="bg-primary-500 text-white py-2 px-10 rounded-md text-base"
+                            >
+                                Voir plus
+                            </button>
+                        </div>
+
+                        <!-- Pub -->
+                        <div class="w-full lg:w-1/4 flex flex-col gap-5">
                             <div class="bg-white shadow-md rounded-md">
                                 <h1
                                     class="bg-primary-500 flex justify-center items-center py-2 rounded-t-md text-white"
@@ -135,10 +180,10 @@
                                 class="relative p-5 rounded-lg shadow-md bg-white flex justify-center items-center flex-col gap-2"
                             >
                                 <i class="absolute left-4 cursor-pointer">
-                                    <chevron-left-icon size="24" />
+                                    <chevron-left-icon size="1.5rem" />
                                 </i>
                                 <i class="text-[#00D26A]">
-                                    <check-icon size="32" />
+                                    <check-icon size="2rem" />
                                 </i>
                                 <p class="text-3xl font-bold">97,7%</p>
                                 <label class="text-center">
@@ -146,7 +191,7 @@
                                     à nos tests psychotechniques
                                 </label>
                                 <i class="absolute right-4 cursor-pointer">
-                                    <chevron-right-icon size="24" />
+                                    <chevron-right-icon size="1.5rem" />
                                 </i>
                             </div>
 
@@ -175,7 +220,7 @@
                                                 :key="'pr-' + index"
                                                 class="text-yellow-500"
                                             >
-                                                <star-icon size="14" />
+                                                <star-icon size="1rem" />
                                             </i>
                                         </div>
                                         <p class="text-[0.5rem]">
@@ -197,12 +242,12 @@
                                             class="font-semibold text-xs inline-flex items-center gap-1"
                                         >
                                             <i class="text-green-500">
-                                                <star-icon size="16" />
+                                                <star-icon size="1rem" />
                                             </i>
-                                            <p>Trustpilot</p>
+                                            <p class="text-xs">Trustpilot</p>
                                         </label>
                                         <div
-                                            class="flex items-center gap-[2px]"
+                                            class="flex items-center gap-[0.2rem]"
                                         >
                                             <i
                                                 v-for="(_, index) in Array.from(
@@ -212,12 +257,12 @@
                                                 )"
                                                 :key="'footer-star-' + index"
                                                 :class="[
-                                                    'inline-flex justify-center items-center p-1 text-white',
+                                                    'inline-flex justify-center items-center p-[0.1rem] text-white',
                                                     index === 4
                                                         ? 'bg-half-gradient'
                                                         : 'bg-green-500',
                                                 ]"
-                                                ><star-icon size="10"
+                                                ><star-icon size="0.7rem"
                                             /></i>
                                         </div>
                                         <p class="text-[0.5rem]">
@@ -233,7 +278,7 @@
                             </div>
 
                             <div
-                                class="relative w-full h-40 rounded-xl shadow-md"
+                                class="relative w-full h-52 rounded-xl shadow-md"
                             >
                                 <img
                                     :src="'/images/voiture.jpg'"
@@ -260,6 +305,7 @@ import ReservationCard from "@/components/landing/ReservationCard.vue";
 import CheckIcon from "@/components/icons/CheckIcon.vue";
 import ChevronLeftIcon from "@/components/icons/ChevronLeftIcon.vue";
 import StarIcon from "@/components/icons/StarIcon.vue";
+import LocationIcon from "@/components/icons/LocationIcon.vue";
 import CustomContainer from "@/components/utils/CustomContainer.vue";
 
 export default {
@@ -276,6 +322,7 @@ export default {
         CheckIcon,
         ChevronLeftIcon,
         StarIcon,
+        LocationIcon,
         CustomContainer,
     },
     data() {
@@ -286,9 +333,25 @@ export default {
             selectedDays: [], // Jours sélectionnés
             journey: ["Matin", "Midi", "Soir"], // Liste des jours
             selectedJourney: [], // Jours sélectionnés
+            actualFilter: "",
+            filters: [
+                {
+                    label: "Le plus rapide",
+                    tarif: 120,
+                },
+                {
+                    label: "Le moins cher",
+                    tarif: 77,
+                },
+                {
+                    label: "Fort demande",
+                    tarif: 77,
+                },
+            ],
         };
     },
     mounted() {
+        this.actualFilter = this.filters[0].label;
         this.months = Array.from({ length: 12 }, (_, index) => {
             const month = new Intl.DateTimeFormat("fr-FR", {
                 month: "long",
@@ -302,7 +365,5 @@ export default {
             return day.charAt(0).toUpperCase() + day.slice(1); // Mettre la première lettre en majuscule
         });
     },
-
-    methods: {},
 };
 </script>

@@ -1,7 +1,9 @@
 <template>
     <div class="bg-accent-500 text-white py-20">
         <custom-container>
-            <div class="flex justify-evenly">
+            <div
+                class="flex justify-evenly flex-col lg:flex-row items-center gap-10"
+            >
                 <section
                     v-for="item in stats"
                     :key="item.id"
@@ -10,7 +12,7 @@
                     <label
                         class="flex flex-col justify-center text-center items-center gap-4"
                     >
-                        <component :is="item.icon" size="80" />
+                        <component :is="item.icon" size="4rem" />
                         <p class="text-sm">
                             {{ item.label }}
                         </p>

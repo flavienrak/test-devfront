@@ -15,7 +15,7 @@
                 'transition-transform duration-500 cursor-pointer',
                 isOpen ? 'rotate-180' : '',
             ]"
-            ><chevron-down-icon size="18"
+            ><chevron-down-icon size="1rem"
         /></i>
         <div
             :class="[

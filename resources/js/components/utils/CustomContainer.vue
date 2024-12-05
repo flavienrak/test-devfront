@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex justify-center">
-        <div class="w-full max-w-[88rem] customContainer">
+        <div class="w-full max-w-[88rem] px-10 xl:px-0 customContainer">
             <slot></slot>
         </div>
     </div>

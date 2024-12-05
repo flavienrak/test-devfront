@@ -18,7 +18,7 @@
                         <p>
                             Sur 8027 avis clients, AAAEP.fr a obtenu la note de
                         </p>
-                        <p class="inline-flex items-center gap-[2px]">
+                        <p class="inline-flex items-center gap-1">
                             <i
                                 v-for="(_, index) in Array.from({ length: 5 })"
                                 :key="'footer-star-' + index"
@@ -28,7 +28,7 @@
                                         ? 'bg-half-gradient'
                                         : 'bg-green-500',
                                 ]"
-                                ><star-icon size="16"
+                                ><star-icon size="1rem"
                             /></i>
                         </p>
                         <p class="font-semibold text-xl">4.4/5</p>
@@ -46,7 +46,7 @@
             </div>
 
             <custom-container>
-                <div class="grid grid-cols-4 gap-5">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
                     <!-- section 1 -->
                     <section class="flex flex-col gap-4">
                         <h1 class="font-semibold text-base">
@@ -68,7 +68,7 @@
                                     target="_blank"
                                     class="inline-flex items-center gap-1 text-sm"
                                 >
-                                    <double-chevron-icon size="12" />{{
+                                    <double-chevron-icon size="0.8rem" />{{
                                         item.label
                                     }}
                                     ({{ item.num }})
@@ -108,9 +108,9 @@
                                             target="_blank"
                                             class="inline-flex items-center gap-1 text-sm"
                                         >
-                                            <double-chevron-icon size="12" />{{
-                                                item.label
-                                            }}
+                                            <double-chevron-icon
+                                                size="0.8rem"
+                                            />{{ item.label }}
                                         </a>
                                     </li>
                                 </ul>
@@ -136,9 +136,9 @@
                                             target="_blank"
                                             class="inline-flex items-center gap-1 text-sm"
                                         >
-                                            <double-chevron-icon size="12" />{{
-                                                item.label
-                                            }}
+                                            <double-chevron-icon
+                                                size="0.8rem"
+                                            />{{ item.label }}
                                         </a>
                                     </li>
                                 </ul>
@@ -196,9 +196,9 @@
                                             target="_blank"
                                             class="inline-flex items-center gap-1 text-sm"
                                         >
-                                            <double-chevron-icon size="12" />{{
-                                                item.label
-                                            }}
+                                            <double-chevron-icon
+                                                size="0.8rem"
+                                            />{{ item.label }}
                                         </a>
                                     </li>
                                 </ul>
@@ -224,9 +224,9 @@
                                             target="_blank"
                                             class="inline-flex items-center gap-1 text-sm"
                                         >
-                                            <double-chevron-icon size="12" />{{
-                                                item.label
-                                            }}
+                                            <double-chevron-icon
+                                                size="0.8rem"
+                                            />{{ item.label }}
                                         </a>
                                     </li>
                                 </ul>
@@ -298,7 +298,7 @@
             </custom-container>
 
             <div class="flex justify-center gap-2 flex-col">
-                <div class="flex justify-center gap-2">
+                <div class="flex justify-center gap-2 flex-wrap px-10">
                     <label
                         v-for="item in ext"
                         :key="item.label"
@@ -322,10 +322,12 @@
                 </p>
             </div>
 
-            <div class="bg-dark-500 px-10 py-4">
+            <div class="bg-dark-500 py-4">
                 <custom-container>
-                    <div class="flex justify-between items-center">
-                        <div>
+                    <div
+                        class="flex justify-between items-center flex-col lg:flex-row gap-5"
+                    >
+                        <div class="flex justify-center">
                             <label
                                 v-for="(item, index) in links"
                                 :key="item.label"
@@ -361,7 +363,7 @@
                                 <i
                                     class="flex justify-center items-center p-1 rounded-sm bg-gray-200 hover:bg-white text-dark-500"
                                 >
-                                    <component :is="item.icon" size="14" />
+                                    <component :is="item.icon" size="1rem" />
                                 </i>
                             </a>
                         </label>

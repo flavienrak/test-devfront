@@ -16,7 +16,7 @@
                 isOpen ? 'rotate-180' : '',
             ]"
         >
-            <chevron-down-icon size="20" />
+            <chevron-down-icon size="1.25rem" />
         </i>
 
         <div

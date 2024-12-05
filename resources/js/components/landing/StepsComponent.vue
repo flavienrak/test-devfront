@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white py-32 text-dark-500">
+    <div class="bg-white py-20 lg:py-32 text-dark-500">
         <custom-container>
             <div class="flex flex-col gap-32">
                 <!-- Etapes -->
@@ -7,7 +7,7 @@
                     <div
                         class="flex flex-col-reverse lg:flex-row items-center gap-20"
                     >
-                        <div class="w-2/5 flex justify-center">
+                        <div class="w-full lg:w-2/5 flex justify-center">
                             <div
                                 class="relative h-[32rem] w-[32rem] rounded-sm shadow-md"
                             >
@@ -63,7 +63,7 @@
                                 class="w-max bg-accent-500 text-white"
                             >
                                 <i class="inline-flex px-2">
-                                    <chevron-right-icon size="24" /> </i
+                                    <chevron-right-icon size="1.5rem" /> </i
                             ></custom-button>
                         </div>
                     </div>
@@ -130,11 +130,11 @@
                                     class="w-max bg-accent-500 text-white"
                                 >
                                     <i class="inline-flex px-2">
-                                        <chevron-right-icon size="24" /> </i
+                                        <chevron-right-icon size="1.5rem" /> </i
                                 ></custom-button>
                             </div>
                         </div>
-                        <div class="w-2/5 flex justify-center">
+                        <div class="w-full lg:w-2/5 flex justify-center">
                             <div
                                 class="relative h-[32rem] w-[32rem] rounded-sm shadow-md"
                             >

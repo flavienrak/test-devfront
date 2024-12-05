@@ -29,10 +29,10 @@
                                 v-if="active.includes(index)"
                                 class="cursor-pointer text-dark-300"
                             >
-                                <minus-icon size="24" />
+                                <minus-icon size="1.5rem" />
                             </i>
                             <i v-else class="cursor-pointer text-dark-300">
-                                <plus-icon size="24" />
+                                <plus-icon size="1.5rem" />
                             </i>
                         </div>
                         <div
