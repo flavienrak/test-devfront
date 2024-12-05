@@ -21,7 +21,7 @@
                     </custom-container>
                 </div>
                 <custom-container>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 :gap-5">
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
                         <!-- Texte -->
                         <section>
                             <div
@@ -179,7 +179,7 @@
                         <!-- Video -->
                         <section class="py-20 lg:py-0">
                             <div
-                                class="relative h-full py-16 lg:py-0 xlgit:px-16 flex justify-center"
+                                class="relative h-full py-16 lg:py-0 lg:ps-16 flex justify-center"
                             >
                                 <div
                                     class="relative z-10 h-[25rem] w-[45rem] rounded-md shadow"
@@ -199,7 +199,7 @@
                                         class="absolute lg:-top-full lg:-right-[35%] w-[40rem] lg:w-[60rem] h-[35rem] lg:h-[56rem] -rotate-12 rounded-full bg-accent-500 shadow"
                                     ></div> -->
                                 <div
-                                    class="absolute -top-[40%] -right-[25%] lg:-top-[90%] lg:-right-[45%] h-full w-[67.5rem] lg:w-[70rem] text-accent-500"
+                                    class="absolute -top-[40%] -right-[25%] lg:-top-[90%] lg:-right-[55%] h-full w-[67.5rem] lg:w-[70rem] text-accent-500"
                                 >
                                     <video-shape />
                                 </div>
