@@ -118,31 +118,14 @@
                         <!-- Cards -->
                         <div class="flex-1 w-full flex flex-col gap-5">
                             <reservation-card
+                                v-for="(item, index) of Array.from({
+                                    length: 5,
+                                })"
+                                :key="'reservation-card-' + index"
                                 day="Lundi"
                                 date="04 Novembre 2024"
                                 location="50 avenue d'Essômes, 02400 Château-Thierry"
                                 number="02"
-                                assignation="Château-Thierry"
-                            />
-                            <reservation-card
-                                day="Lundi"
-                                date="04 Novembre 2024"
-                                location="50 avenue d'Essômes, 02400 Château-Thierry"
-                                number="05"
-                                assignation="Château-Thierry"
-                            />
-                            <reservation-card
-                                day="Lundi"
-                                date="04 Novembre 2024"
-                                location="50 avenue d'Essômes, 02400 Château-Thierry"
-                                number="02"
-                                assignation="Château-Thierry"
-                            />
-                            <reservation-card
-                                day="Lundi"
-                                date="04 Novembre 2024"
-                                location="50 avenue d'Essômes, 02400 Château-Thierry"
-                                number="05"
                                 assignation="Château-Thierry"
                             />
                         </div>
