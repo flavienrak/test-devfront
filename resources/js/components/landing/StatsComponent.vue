@@ -1,9 +1,7 @@
 <template>
     <div class="bg-accent-500 text-white py-20">
         <custom-container>
-            <div
-                class="flex justify-evenly flex-col lg:flex-row items-center gap-10"
-            >
+            <div class="flex justify-evenly flex-col lg:flex-row items-center">
                 <section
                     v-for="item in stats"
                     :key="item.id"

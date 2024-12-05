@@ -144,7 +144,7 @@
                         <div class="w-full lg:w-1/4 flex flex-col gap-5">
                             <div class="bg-white shadow-md rounded-md">
                                 <h1
-                                    class="bg-primary-500 flex justify-center items-center py-2 rounded-t-md text-white"
+                                    class="text-center bg-primary-500 flex justify-center items-center py-2 rounded-t-md text-white"
                                 >
                                     Les tests par ville à Aisne (02)
                                 </h1>

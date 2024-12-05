@@ -7,7 +7,7 @@
                 <h1 class="inline-flex text-lg w-full lg:w-auto">
                     {{ date }}
                 </h1>
-                <label class="inline-flex items-center gap-2 text-lg">
+                <label class="flex items-center flex-wrap gap-2 text-lg">
                     <i class="text-dark-400">
                         <location-icon
                             :fill="'currentColor'"
@@ -15,8 +15,10 @@
                             size="1.75rem"
                         />
                     </i>
-                    {{ location }}
-                    <span class="hidden lg:inline">{{ `, ${adresse}` }}</span>
+                    <span>
+                        {{ location }}
+                    </span>
+                    <span class="hidden xl:inline">{{ `, ${adresse}` }}</span>
                 </label>
             </div>
             <div class="p-5 flex gap-4 flex-col lg:flex-row">
