@@ -1,6 +1,6 @@
 <template>
     <div
-        class="relative text-dark-500 lg:overflow-hidden bg-[#f8f9fg] lg:shadow-md"
+        class="relative text-dark-500 overflow-hidden bg-[#f8f9fg] lg:shadow-md"
     >
         <div class="h-[0.625rem] hidden lg:block bg-accent-500 w-full"></div>
         <div class="lg:py-10">
@@ -31,8 +31,9 @@
                                     <h1
                                         class="relative text-3xl font-semibold font-title w-max leading-[1.5]"
                                     >
-                                        Test psychotechnique : Récupérez votre
-                                        permis
+                                        Test psychotechnique :
+                                        <br class="lg:hidden" />
+                                        Récupérez votre permis
                                         <span
                                             class="absolute block bg-accent-500 h-1 w-44 right-0"
                                         ></span>
@@ -178,7 +179,7 @@
                         <!-- Video -->
                         <section class="py-20 lg:py-0">
                             <div
-                                class="relative h-full py-16 lg:py-0 px-16 flex justify-center"
+                                class="relative h-full py-16 lg:py-0 lg:px-16 flex justify-center"
                             >
                                 <div
                                     class="relative z-10 h-[25rem] w-[45rem] rounded-md shadow"
@@ -198,7 +199,7 @@
                                         class="absolute lg:-top-full lg:-right-[35%] w-[40rem] lg:w-[60rem] h-[35rem] lg:h-[56rem] -rotate-12 rounded-full bg-accent-500 shadow"
                                     ></div> -->
                                 <div
-                                    class="absolute -top-[40%] right-[5%] lg:-top-[90%] lg:-right-[45%] h-full w-[67.5rem] lg:w-[70rem] text-accent-500"
+                                    class="absolute -top-[40%] -right-[25%] lg:-top-[90%] lg:-right-[45%] h-full w-[67.5rem] lg:w-[70rem] text-accent-500"
                                 >
                                     <video-shape />
                                 </div>

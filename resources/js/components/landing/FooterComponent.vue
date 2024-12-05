@@ -3,7 +3,9 @@
         <div class="flex flex-col gap-10">
             <div>
                 <custom-container>
-                    <p class="font-medium py-2 text-secondary">
+                    <p
+                        class="font-medium py-2 text-secondary text-sm lg:text-base"
+                    >
                         * Le prix barré affiché représente le tarif maximum
                         auquel le test psychotechnique a été vendu dans le
                         département au cours des 15 derniers jours, hors offre
@@ -13,25 +15,29 @@
                 </custom-container>
                 <div class="bg-dark-500 py-4 flex justify-center">
                     <label
-                        class="text-lg text-white text-center font-medium inline-flex items-center gap-4"
+                        class="text-lg text-white text-center font-medium inline-flex items-center flex-col lg:flex-row gap-4"
                     >
-                        <p>
+                        <p class="hidden lg:block">
                             Sur 8027 avis clients, AAAEP.fr a obtenu la note de
                         </p>
-                        <p class="inline-flex items-center gap-1">
-                            <i
-                                v-for="(_, index) in Array.from({ length: 5 })"
-                                :key="'footer-star-' + index"
-                                :class="[
-                                    'inline-flex justify-center items-center p-1 text-white',
-                                    index === 4
-                                        ? 'bg-half-gradient'
-                                        : 'bg-green-500',
-                                ]"
-                                ><star-icon size="1rem"
-                            /></i>
-                        </p>
-                        <p class="font-semibold text-xl">4.4/5</p>
+                        <div class="flex items-center gap-4">
+                            <p class="inline-flex items-center gap-1">
+                                <i
+                                    v-for="(_, index) in Array.from({
+                                        length: 5,
+                                    })"
+                                    :key="'footer-star-' + index"
+                                    :class="[
+                                        'inline-flex justify-center items-center p-1 text-white',
+                                        index === 4
+                                            ? 'bg-half-gradient'
+                                            : 'bg-green-500',
+                                    ]"
+                                    ><star-icon size="1rem"
+                                /></i>
+                            </p>
+                            <p class="font-semibold text-xl">4.4/5</p>
+                        </div>
                         <p>
                             Voir tous les avis clients
                             <a
@@ -327,7 +333,7 @@
                     <div
                         class="flex justify-between items-center flex-col lg:flex-row gap-5"
                     >
-                        <div class="flex justify-center">
+                        <div>
                             <label
                                 v-for="(item, index) in links"
                                 :key="item.label"

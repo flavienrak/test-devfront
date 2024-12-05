@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-white py-32">
+    <div class="bg-white py-16 lg:py-32">
         <custom-container>
             <div
-                class="w-full flex flex-col gap-10 py-14 px-20 shadow-md bg-white rounded-xl"
+                class="w-full flex flex-col gap-10 py-14 px-10 lg:px-20 shadow-md bg-white rounded-xl"
             >
                 <h1 class="font-title text-primary-500 font-semibold text-3xl">
                     Préparez votre test psychotechnique

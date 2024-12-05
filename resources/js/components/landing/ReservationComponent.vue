@@ -1,5 +1,5 @@
 <template>
-    <div class="py-32 bg-[#F8F9FB]">
+    <div class="py-16 lg:py-32 bg-[#F8F9FB]">
         <custom-container>
             <div class="flex flex-col gap-14">
                 <div>
@@ -96,7 +96,7 @@
                             @click="actualFilter = item.label"
                             :key="'filter-' + item.label"
                             :class="[
-                                'flex flex-col gap-2 justify-center ps-20 p-5',
+                                'flex flex-col gap-2 justify-center lg:ps-20 p-5 cursor-default',
                                 index !== 0 ? 'border-l border-dark-100' : '',
                                 item.label === actualFilter
                                     ? 'bg-primary-500 text-white'
@@ -109,7 +109,7 @@
                     </div>
 
                     <h1
-                        class="block lg:hidden text-3xl font-semibold text-dark-500 py-5"
+                        class="block lg:hidden text-xl lg:text-3xl font-semibold text-dark-500 py-5"
                     >
                         12 Résultats
                     </h1>
@@ -122,8 +122,7 @@
                                     length: 5,
                                 })"
                                 :key="'reservation-card-' + index"
-                                day="Lundi"
-                                date="04 Novembre 2024"
+                                date="Lundi 04 Novembre 2024"
                                 location="50 avenue d'Essômes, 02400 Château-Thierry"
                                 number="02"
                                 assignation="Château-Thierry"

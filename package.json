@@ -21,6 +21,7 @@
         "vue": "^3.3.4"
     },
     "dependencies": {
+        "dotenv": "^16.4.7",
         "uuid": "^11.0.3",
         "vee-validate": "^4.14.7",
         "yup": "^1.4.0"

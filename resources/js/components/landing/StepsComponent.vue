@@ -19,7 +19,7 @@
                                     class="absolute w-full h-full object-cover"
                                 />
                                 <div
-                                    class="absolute w-40 h-40 top-5 -left-20 lg:left-auto lg:-right-20 z-10 rounded-full shadow-md"
+                                    class="absolute w-40 h-40 top-5 -left-10 lg:left-auto lg:-right-20 z-10 rounded-full shadow-md"
                                 >
                                     <img
                                         :src="'/images/person.jpg'"
