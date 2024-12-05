@@ -7,7 +7,9 @@
                     <div
                         class="flex flex-col-reverse lg:flex-row items-center gap-20"
                     >
-                        <div class="w-full lg:w-2/5 flex justify-center">
+                        <div
+                            class="w-full lg:w-2/5 flex justify-center lg:justify-start"
+                        >
                             <div
                                 class="relative h-[32rem] w-[32rem] rounded-sm shadow-md"
                             >

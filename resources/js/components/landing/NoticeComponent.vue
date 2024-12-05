@@ -1,7 +1,7 @@
 <template>
     <div ref="container" class="pb-32 pt-16 bg-[#F8F9FB]">
         <custom-container>
-            <div class="flex flex-col gap-16 text-dark-500 px-16">
+            <div class="flex flex-col gap-16 text-dark-500">
                 <h1
                     class="font-title text-accent-500 font-semibold text-3xl text-center lg:text-start"
                 >
