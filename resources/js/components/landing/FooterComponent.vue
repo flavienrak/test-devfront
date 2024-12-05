@@ -4,7 +4,7 @@
             <div>
                 <custom-container>
                     <p
-                        class="font-medium py-2 text-secondary text-sm lg:text-base"
+                        class="font-medium py-2 text-secondary text-base"
                     >
                         * Le prix barré affiché représente le tarif maximum
                         auquel le test psychotechnique a été vendu dans le

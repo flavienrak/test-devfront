@@ -109,7 +109,7 @@
                     </div>
 
                     <h1
-                        class="block lg:hidden text-xl lg:text-3xl font-semibold text-dark-500 py-5"
+                        class="block lg:hidden text-3xl font-semibold text-dark-500 py-5"
                     >
                         12 Résultats
                     </h1>
