@@ -43,7 +43,7 @@
             </div>
         </div>
         <div
-            class="w-1/3 lg:w-max flex flex-col items-center gap-2 py-5 px-2 lg:px-5 justify-center lg:border-l-2 border-dark-100"
+            class="flex flex-col items-center gap-2 p-5 justify-center lg:border-l-2 border-dark-100"
         >
             <h1>
                 <span class="font-bold text-3xl">77€</span>
