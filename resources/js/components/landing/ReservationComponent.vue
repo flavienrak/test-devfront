@@ -123,7 +123,8 @@
                                 })"
                                 :key="'reservation-card-' + index"
                                 date="Lundi 04 Novembre 2024"
-                                location="50 avenue d'Essômes, 02400 Château-Thierry"
+                                location="50 avenue d'Essômes"
+                                adresse="02400 Château-Thierry"
                                 number="02"
                                 assignation="Château-Thierry"
                             />

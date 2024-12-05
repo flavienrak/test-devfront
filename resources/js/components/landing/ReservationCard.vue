@@ -16,6 +16,7 @@
                         />
                     </i>
                     {{ location }}
+                    <span class="hidden lg:inline">{{ `, ${adresse}` }}</span>
                 </label>
             </div>
             <div class="p-5 flex gap-4 flex-col lg:flex-row">
@@ -72,6 +73,10 @@ export default {
     components: { LocationIcon, AlertIcon, ChevronRightIcon },
     props: {
         date: {
+            type: String,
+            required: true,
+        },
+        adresse: {
             type: String,
             required: true,
         },
