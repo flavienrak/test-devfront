@@ -56,7 +56,7 @@
                                 :options="journey"
                             />
                         </div>
-                        <div class="flex flex-col gap-2 justify-center ps-20">
+                        <div class="flex flex-col gap-2 justify-end">
                             <button
                                 class="bg-[#434343] flex justify-center items-center px-16 py-2 rounded-md"
                             >
