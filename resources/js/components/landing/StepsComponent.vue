@@ -29,44 +29,50 @@
                                 </div>
                             </div>
                         </div>
-                        <div
-                            class="flex-1 py-5 flex flex-col gap-14 items-center"
-                        >
-                            <h1
-                                class="font-title text-accent-500 font-semibold text-3xl"
-                            >
-                                Votre test psychotechnique en 3 étapes :
-                            </h1>
-                            <ul
-                                class="relative flex flex-col gap-10 before:content-[''] before:absolute before:left-6 before:top-0 before:bottom-0 before:w-[2px] before:bg-accent-500"
-                            >
-                                <li
-                                    v-for="(item, index) in steps"
-                                    :key="item.title"
-                                    class="flex items-center gap-4 max-w-[36rem]"
+                        <div class="flex-1 py-5 flex justify-center">
+                            <div class="flex flex-col gap-14">
+                                <h1
+                                    class="font-title text-accent-500 font-semibold text-3xl"
                                 >
-                                    <p
-                                        class="z-10 bg-white inline-flex w-12 h-12 min-w-12 min-h-12 justify-center text-accent-500 text-2xl font-bold items-center rounded-full shadow-md"
+                                    Votre test psychotechnique en 3 étapes :
+                                </h1>
+                                <ul
+                                    class="relative flex flex-col gap-10 before:content-[''] before:absolute before:left-6 before:top-0 before:bottom-0 before:w-[2px] before:bg-accent-500"
+                                >
+                                    <li
+                                        v-for="(item, index) in steps"
+                                        :key="item.title"
+                                        class="flex items-center gap-4 max-w-[36rem]"
                                     >
-                                        {{ index + 1 }}
-                                    </p>
-                                    <label>
-                                        <p>
-                                            <span class="font-bold">
-                                                {{ item.title }}
-                                            </span>
-                                            {{ item.desc }}
+                                        <p
+                                            class="z-10 bg-white inline-flex w-12 h-12 min-w-12 min-h-12 justify-center text-accent-500 text-2xl font-bold items-center rounded-full shadow-md"
+                                        >
+                                            {{ index + 1 }}
                                         </p>
-                                    </label>
-                                </li>
-                            </ul>
-                            <custom-button
-                                label="Je réserve mon test psychotechnique"
-                                class="w-max bg-accent-500 text-white"
-                            >
-                                <i class="inline-flex px-2">
-                                    <chevron-right-icon size="1.5rem" /> </i
-                            ></custom-button>
+                                        <label>
+                                            <p>
+                                                <span class="font-bold">
+                                                    {{ item.title }}
+                                                </span>
+                                                {{ item.desc }}
+                                            </p>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div
+                                    class="flex w-full justify-center lg:justify-start"
+                                >
+                                    <custom-button
+                                        label="Je réserve mon test psychotechnique"
+                                        class="w-max bg-accent-500 text-white"
+                                    >
+                                        <i class="inline-flex px-2">
+                                            <chevron-right-icon
+                                                size="1.5rem"
+                                            /> </i
+                                    ></custom-button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
