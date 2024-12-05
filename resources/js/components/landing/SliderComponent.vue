@@ -12,11 +12,17 @@
         /></i>
         <div
             ref="container"
-            class="overflow-hidden mask w-[calc(100%-6rem)]"
+            :class="[
+                'overflow-hidden mask w-[calc(100%-6rem)]',
+                isDragging ? 'cursor-grab' : '',
+            ]"
             @mousedown="startDrag"
             @mouseup="stopDrag"
             @mouseleave="stopDrag"
             @mousemove="onDrag"
+            @touchstart="startDrag"
+            @touchmove="onDrag"
+            @touchend="stopDrag"
         >
             <div
                 class="grid transition-transform duration-500"
@@ -138,7 +144,11 @@ export default {
         },
         startDrag(event) {
             this.isDragging = true;
-            this.startX = event.clientX;
+            const startX =
+                event.type === "touchstart"
+                    ? event.touches[0].clientX
+                    : event.clientX;
+            this.startX = startX;
             this.prevTranslate = -this.currentIndex * this.adjustedSlideWidth;
         },
         stopDrag() {
@@ -164,7 +174,11 @@ export default {
         },
         onDrag(event) {
             if (this.isDragging) {
-                const deltaX = event.clientX - this.startX;
+                const currentX =
+                    event.type === "touchmove"
+                        ? event.touches[0].clientX
+                        : event.clientX;
+                const deltaX = currentX - this.startX;
 
                 // Ajout de l'effet de rebond
                 if (
